@@ -1,0 +1,192 @@
+header {
+    width: 100%;
+    height: 50px; /* Adjust height dynamically */
+    padding: 15px 10px;
+    background-color: #000; /* Black background */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out the title and user icon */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    box-sizing: border-box;/* Optional separator line */
+}
+
+/* Header content alignment */
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end; /* Push the icon to the right */
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative; /* Needed for dropdown positioning */
+    display: inline-block;
+}
+
+/* User icon */
+.user-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Make the icon circular */
+    cursor: pointer;
+    object-fit: cover; /* Ensure the image fits perfectly without distortion */
+    display: block; /* Show pointer on hover */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0; /* Align to the right of the dropdown container */
+    top: 50px; /* Position below the icon */
+    background-color: #000; /* Match header background */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000;
+    overflow: hidden; /* Prevent items from overflowing */
+    min-width: 150px; /* Set minimum width for dropdown */
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Dropdown menu link hover effect */
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+}
+
+/* Show dropdown menu on click */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block; /* Show the menu */
+}
+
+/* Body styles: black background, centered content */
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #000; /* Black background */
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/* Container to hold main content and side menu */
+.container {
+    display: flex;
+    flex: 1; /* Changed from width and height percentages to flex to fill the page */
+    height: calc(100vh - 60px); /* Ensures the container stretches the full height */
+    width: 100%; /* Ensures the container stretches the full width */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: 3;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place video behind other elements */
+    overflow: hidden; /* Prevent video overflow */
+}
+
+/* Video styling */
+.background-video {
+    flex: 3;
+    object-fit: cover; /* Ensure the video covers the entire background area */
+    width: 74%;
+    height: 91%;
+    transform: translateY(60px);
+    border-radius: 10px;
+}
+
+/* Main content section with background image */
+.main-content {
+    flex: 3; /* Takes 75% of the width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Main heading styles */
+.main-content h1 {
+    font-size: 6rem;
+    position:absolute;
+    bottom: 0;
+    left: 20px;
+    color: #fff;
+    font-family: forum, serif;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Shadow for better visibility */
+    transform: translateY(40px);
+}
+
+
+/* Side menu container */
+.side-menu {
+    flex: 1; /* Takes 25% of the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100%; 
+}
+
+/* Individual menu items */
+.menu-item {
+    background: rgb(26, 26, 27); /* Semi-transparent background */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(120, 109, 109, 0.522);
+    text-align: center;
+    border: 0.5px ridge rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: calc((100% - 10px) / 3); /* Divide height equally across 3 items, with spacing */
+    margin-bottom: 15px;/* Ensures all items fit within the height */
+}
+
+.menu-item:last-child {
+    margin-bottom: 5; /* Remove spacing after the last item */
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+/* Images inside menu items */
+.menu-item img {
+    width: 100%; /* Takes full width of the container */
+    height: 80%; /* Covers 70% of the menu item height */
+    object-fit: cover; /* Ensures image fits nicely without distortion */
+}
+
+/* Menu item text */
+.menu-item p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: d#fff;
+    text-transform: uppercase;
+    transform: translateY(-6px);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
